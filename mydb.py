@@ -1,4 +1,4 @@
-# Install MySQL on your computer
+#I nstall MySQL on your computer
 # https://dev.mysql.com/downloads/installer/
 # pip install pysql
 

@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2>Enroll {{ client.first_name }} {{ client.last_name }} in a Program</h2>
+    <br/>
+
+    <form method="POST">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="program" class="form-label">Select Program</label>
+            <select name="program" id="program" class="form-select" required>
+                {% for program in available_programs %}
+                    <option value="{{ program.id }}">{{ program.name }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <button type="submit" class="btn btn-success">Enroll</button>
+        <a href="{% url 'client_profile' client.pk %}" class="btn btn-secondary">Cancel</a>
+    </form>
+</div>
+{% endblock %}

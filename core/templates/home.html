@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container-fluid" style="background: linear-gradient(to right, #00aaff, #004d99);">
+  <div class="container py-5 text-center">
+    <h2 class="text-white">Welcome, {{ user.username }}!</h2>
+    <p class="text-white mb-5">Select an action to proceed:</p>
+
+    <!-- Row for Action Cards -->
+    <div class="row justify-content-center mt-4">
+      <!-- Card 1: Register New Client -->
+      <div class="col-md-3 mb-4">
+        <div class="card shadow-lg border-0 rounded-3 hover-shadow">
+          <div class="card-body text-center">
+            <h5 class="card-title">Register New Client</h5>
+            <a href="{% url 'register_client' %}" class="btn btn-primary w-100">Register</a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Card 2: View Client List -->
+      <div class="col-md-3 mb-4">
+        <div class="card shadow-lg border-0 rounded-3 hover-shadow">
+          <div class="card-body text-center">
+            <h5 class="card-title">View Client List</h5>
+            <a href="{% url 'client_list' %}" class="btn btn-success w-100">View Clients</a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Card 3: Create New Program -->
+      <div class="col-md-3 mb-4">
+        <div class="card shadow-lg border-0 rounded-3 hover-shadow">
+          <div class="card-body text-center">
+            <h5 class="card-title">Create New Program</h5>
+            <a href="{% url 'create_program' %}" class="btn btn-warning w-100">Create Program</a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Card 4: View Programs -->
+      <div class="col-md-3 mb-4">
+        <div class="card shadow-lg border-0 rounded-3 hover-shadow">
+          <div class="card-body text-center">
+            <h5 class="card-title">View Programs</h5>
+            <a href="{% url 'program_list' %}" class="btn btn-info w-100">View Programs</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
